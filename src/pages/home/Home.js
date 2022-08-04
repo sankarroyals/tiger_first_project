@@ -7,9 +7,9 @@ import Widget from "../../components/widget/Widget";
 const Home = () => {
   return (
     <div className="home">
-      <Sidebar />
+      
       <div className="homeContainer">
-        <Navbar />
+        
         <div className="d">
         <h6 style={{margin:"10px 50px"}}>Overview</h6>
         <div className="widgets">

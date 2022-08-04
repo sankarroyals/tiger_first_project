@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./navbar.scss";
 
 
@@ -7,7 +8,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="wrapper">
+        <Link to="/" style={{textDecoration:"none"}}>
         <h6><strong style={{fontSize:"15px",fontWeight:"bold",cursor:"pointer"}}>TURING</strong></h6>
+        </Link>
         <div className="items">
           <div className="item">
             <p> Predictive model for MCK</p>
