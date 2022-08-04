@@ -2,10 +2,7 @@ import "./widget.scss";
 
 
 const Widget = ({ name,percentage,depo }) => {
-  let data;
-
-  //temporary
-  const amount = 8;
+  
 
 
  
