@@ -1,0 +1,47 @@
+.table {
+  .tableCell{
+   font-size: 10px;
+  }
+  .head{
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .cellWrapper {
+    display: flex;
+    align-items: center;
+
+    .image {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+  }
+ 
+
+  .status {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.approved {
+      color: white;
+      background-color: green;
+      padding: 5px;
+      border-radius: 50%;
+    }
+    &.pending {
+      color: white;
+      background-color: rgb(235, 196, 99);
+      padding: 5px 8px;
+      border-radius: 50%;
+    }
+    &.canceled {
+      color: white;
+      background-color: red;
+      padding: 5px 8px;
+      border-radius: 50%;
+    }
+  }
+}
+
