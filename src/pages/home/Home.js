@@ -14,9 +14,9 @@ const Home = () => {
         <h6 style={{margin:"10px 50px"}}>Overview</h6>
         <div className="widgets">
           <Widget name="Active Deployments" depo="8" percentage="2.3%" />
-          <Widget type="Service Health Summary" />
-          <Widget type="Data Rift Summary" />
-          <Widget type="Accuracy Summary" />
+          <Widget name="Service Health Summary" />
+          <Widget name="Data Rift Summary" />
+          <Widget name="Accuracy Summary" />
         </div>
         
         <div className="listContainer">
