@@ -5,63 +5,7 @@ import Table from "../../components/table/Table";
 import Widget from "../../components/widget/Widget";
 
 const Home = () => {
-  const rows = [
-    {
-      id: 1143155,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "approved",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
-    },
-    {
-      id: 1143156,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "canceled",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
-    },
-    {
-      id: 1143157,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "pending",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
-    },
-    {
-      id: 1143158,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "approved",
-      pipeline_status: "approved",
-      performance_status: "canceled",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
-    },
-    {
-      id: 1143159,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "approved",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
-    },
-  ];
+  
 
   return (
     <div className="home">
@@ -79,7 +23,7 @@ const Home = () => {
         
         <div className="listContainer">
           
-          <Table rows={rows}/>
+          <Table />
         </div>
         </div>
       </div>

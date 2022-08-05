@@ -7,6 +7,7 @@ import Sidebar from './components/sidebar/Sidebar';
 import Navbar from './components/navbar/Navbar';
 import Chart from './components/chart/Chart';
 import Publish from './components/publish/Publish';
+import AddReport from './components/addReport/AddReport';
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/charts" element={<Chart title="Deployments" />} />
             <Route path="/publish" element={<Publish />} />
+            <Route path='/add' element={<AddReport />} />
           </Routes>
         </div>
       </div>

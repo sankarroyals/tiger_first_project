@@ -1,13 +1,14 @@
 import "./sidebar.scss";
 
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 
 
 const Sidebar = () => {
-
+  const navigate = useNavigate()
   return (
     <div className="sidebar bg-dark" style={{ color: "white" }}>
       <div className="top">
@@ -19,9 +20,15 @@ const Sidebar = () => {
       <div className="center">
         <ul>
 
-          <li>
-            <i class="fa-solid fa-server"></i>
+          
+          <li 
+          onClick={()=>{
+            navigate('/charts')
+          }}
+          >
+          <i class="fa-solid fa-chart-area"></i>
           </li>
+          
 
 
           <li>

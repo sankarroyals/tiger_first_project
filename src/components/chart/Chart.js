@@ -75,7 +75,7 @@ const Chart = ({ title }) => {
             onClick={navi}>PUBLISH</Button>
         </div>
         {/* change here */}
-        <div className="title">{title}</div>
+        <div className="title"><span style={{color:"black",fontWeight:"bold"}}>{`${chartV.toUpperCase()}`}</span>{` Graph for The ${title}  `}</div>
 
 
         {chartV === 'line' && <Line data={data} labels={labels} />}
