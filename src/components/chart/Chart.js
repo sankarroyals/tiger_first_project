@@ -11,7 +11,7 @@ import pptxgen from "pptxgenjs";
 
 
 const Chart = ({ title }) => {
-
+  
   const [data,setData] = useState([820, 932, 901, 934, 1290, 1330, 1320]);
   const [labels,setLabels] = useState(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'])
 
@@ -39,6 +39,8 @@ const Chart = ({ title }) => {
       }
     ];
 
+
+    //  pres.ChartType.bar, pres.ChartType.line   these are used  to download line,bar graphs
     if(chartV === 'bar'){
       slide.addChart(pres.ChartType.bar, dataChartAreaLine, { x: 2, y: 2, w: 6, h: 3, showLegend: true });
 

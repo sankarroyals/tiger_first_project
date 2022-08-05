@@ -19,7 +19,7 @@ const Pie = ({data,labels}) => {
           },
         ],
         tooltip: {
-          trigger: 'axis',
+          trigger: 'item',
         },
       };
     
