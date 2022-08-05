@@ -8,84 +8,80 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Checkbox } from "@mui/material";
 
-const List = () => {
-  const rows = [
-    {
-      id: 1143155,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "approved",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
+const List = ({rows}) => {
+  // const rows = [
+  //   {
+  //     id: 1143155,
+  //     name: "Wind Energy Forest",
+  //     parent_project_name: "Weather Forecast",
+  //     status: "approved",
+  //     pipeline_status: "approved",
+  //     performance_status: "approved",
+  //     last_run_status: "04-Apr-2022 11:03 AM",
+  //     developer: "Smith White"
 
-    },
-    {
-      id: 1143156,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "canceled",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
+  //   },
+  //   {
+  //     id: 1143156,
+  //     name: "Wind Energy Forest",
+  //     parent_project_name: "Weather Forecast",
+  //     status: "canceled",
+  //     pipeline_status: "approved",
+  //     performance_status: "approved",
+  //     last_run_status: "04-Apr-2022 11:03 AM",
+  //     developer: "Smith White"
 
-    },
-    {
-      id: 1143157,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "pending",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
+  //   },
+  //   {
+  //     id: 1143157,
+  //     name: "Wind Energy Forest",
+  //     parent_project_name: "Weather Forecast",
+  //     status: "pending",
+  //     pipeline_status: "approved",
+  //     performance_status: "approved",
+  //     last_run_status: "04-Apr-2022 11:03 AM",
+  //     developer: "Smith White"
 
-    },
-    {
-      id: 1143158,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "approved",
-      pipeline_status: "approved",
-      performance_status: "canceled",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
+  //   },
+  //   {
+  //     id: 1143158,
+  //     name: "Wind Energy Forest",
+  //     parent_project_name: "Weather Forecast",
+  //     status: "approved",
+  //     pipeline_status: "approved",
+  //     performance_status: "canceled",
+  //     last_run_status: "04-Apr-2022 11:03 AM",
+  //     developer: "Smith White"
 
-    },
-    {
-      id: 1143159,
-      name: "Wind Energy Forest",
-      parent_project_name: "Weather Forecast",
-      status: "approved",
-      pipeline_status: "approved",
-      performance_status: "approved",
-      last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
+  //   },
+  //   {
+  //     id: 1143159,
+  //     name: "Wind Energy Forest",
+  //     parent_project_name: "Weather Forecast",
+  //     status: "approved",
+  //     pipeline_status: "approved",
+  //     performance_status: "approved",
+  //     last_run_status: "04-Apr-2022 11:03 AM",
+  //     developer: "Smith White"
 
-    },
-  ];
+  //   },
+  // ];
+
+  const headers =['Model Name','Parent Project','Status','Pipeline Health','Performance Drift','Left Run Status','Devloper','Control Panel' ]
   return (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell head">Model Name</TableCell>
-            <TableCell className="tableCell head">Parent Project</TableCell>
-            <TableCell className="tableCell head">Status</TableCell>
-            <TableCell className="tableCell head">Pipeline Health</TableCell>
-            <TableCell className="tableCell head">Performance Drift</TableCell>
-            <TableCell className="tableCell head">Left Run Status</TableCell>
-            <TableCell className="tableCell head">Left Run Status</TableCell>
-            <TableCell className="tableCell head">Devloper</TableCell>
-            <TableCell className="tableCell head">Control Panel</TableCell>
+          {headers.map(h =>(<TableCell className="tableCell head">{h}</TableCell>))}
+           
+            
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell className="tableCell">{row.name}</TableCell>
+              <TableCell className="tableCell">{row[0]}</TableCell>
 
               <TableCell className="tableCell">{row.parent_project_name}</TableCell>
 
