@@ -45,11 +45,10 @@
         padding: 15px;
         cursor: pointer;
 
-      
-
-        &:hover {
-
-          background-color: #272728;
+        transition: all ease 0.2s;
+          
+        &:hover{
+          transform: scale(1.3);
         }
 
         .icon {
@@ -84,6 +83,12 @@
           font-size: 10px;
           margin-left: 0;
           margin-bottom: 40px;
+          cursor: pointer;
+          transition: all ease 0.2s;
+          
+          &:hover{
+            transform: scale(1.3);
+          }
           
 
           
