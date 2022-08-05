@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Checkbox } from "@mui/material";
 
 const List = () => {
   const rows = [
@@ -17,8 +18,8 @@ const List = () => {
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer:"Smith White"
-      
+      developer: "Smith White"
+
     },
     {
       id: 1143156,
@@ -28,8 +29,8 @@ const List = () => {
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer:"Smith White"
-      
+      developer: "Smith White"
+
     },
     {
       id: 1143157,
@@ -39,8 +40,8 @@ const List = () => {
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer:"Smith White"
-      
+      developer: "Smith White"
+
     },
     {
       id: 1143158,
@@ -50,8 +51,8 @@ const List = () => {
       pipeline_status: "approved",
       performance_status: "canceled",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer:"Smith White"
-      
+      developer: "Smith White"
+
     },
     {
       id: 1143159,
@@ -61,8 +62,8 @@ const List = () => {
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer:"Smith White"
-      
+      developer: "Smith White"
+
     },
   ];
   return (
@@ -85,70 +86,132 @@ const List = () => {
           {rows.map((row) => (
             <TableRow key={row.id}>
               <TableCell className="tableCell">{row.name}</TableCell>
-              
+
               <TableCell className="tableCell">{row.parent_project_name}</TableCell>
-             
+
               <TableCell className="tableCell">
                 {row.status === 'approved' ?
-                <span className={`status ${row.status}`}>
-                <i class="fas fa-check"></i>
-                </span>
-                :
-              
-                (row.status === 'pending'?
-                  
-                  
-                  <span className={`status ${row.status}`}><i class="fas fa-exclamation"></i></span>
-                  
+                  <span className={`status ${row.status}`}>
+                    <i class="fas fa-check"></i>
+                  </span>
                   :
-                  <span className={`status ${row.status}`}><i class="fa-solid fa-xmark"></i></span>
-                  
+
+                  (row.status === 'pending' ?
+
+
+                    <span className={`status ${row.status}`}><i class="fas fa-exclamation"></i></span>
+
+                    :
+                    <span className={`status ${row.status}`}><i class="fa-solid fa-xmark"></i></span>
+
                   )
-                
-                 }
+
+                }
               </TableCell>
               <TableCell className="tableCell">
                 {row.pipeline_status === 'approved' ?
-                <span className={`status ${row.pipeline_status}`}>
-                <i class="fas fa-check"></i>
-                </span>
-                :
-              
-                (row.status === 'pending'?
-                  
-                  
-                  <span className={`status ${row.pipeline_status}`}><i class="fas fa-exclamation"></i></span>
-                  
+                  <span className={`status ${row.pipeline_status}`}>
+                    <i class="fas fa-check"></i>
+                  </span>
                   :
-                  <span className={`status ${row.pipeline_status}`}><i class="fa-solid fa-xmark"></i></span>
-                  
+
+                  (row.status === 'pending' ?
+
+
+                    <span className={`status ${row.pipeline_status}`}><i class="fas fa-exclamation"></i></span>
+
+                    :
+                    <span className={`status ${row.pipeline_status}`}><i class="fa-solid fa-xmark"></i></span>
+
                   )
-                
-                 }
+
+                }
               </TableCell>
               <TableCell className="tableCell">
                 {row.performance_status === 'approved' ?
-                <span className={`status ${row.performance_status}`}>
-                <i class="fas fa-check"></i>
-                </span>
-                :
-              
-                (row.status === 'pending'?
-                  
-                  
-                  <span className={`status ${row.performance_status}`}><i class="fas fa-exclamation"></i></span>
-                  
+                  <span className={`status ${row.performance_status}`}>
+                    <i class="fas fa-check"></i>
+                  </span>
                   :
-                  <span className={`status ${row.performance_status}`}><i class="fa-solid fa-xmark"></i></span>
-                  
+
+                  (row.status === 'pending' ?
+
+
+                    <span className={`status ${row.performance_status}`}><i class="fas fa-exclamation"></i></span>
+
+                    :
+                    <span className={`status ${row.performance_status}`}><i class="fa-solid fa-xmark"></i></span>
+
                   )
-                
-                 }
+
+                }
               </TableCell>
               <TableCell className="tableCell">{row.last_run_status}</TableCell>
-              <TableCell className="tableCell"></TableCell>
+
+              <TableCell className="tableCell">
+                <div className="boxC">
+
+                  <Checkbox className="box" defaultChecked
+                    onClick={(e) => {
+                      if (e.target.checked) {
+                        console.log('checked')
+                      }
+                      else {
+                        console.log("unchecked")
+                      }
+                    }}
+                  ></Checkbox>
+                  <Checkbox className="box"
+                   onClick={(e) => {
+                      if (e.target.checked) {
+                        console.log('checked')
+                      }
+                      else {
+                        console.log("unchecked")
+                      }
+                    }}
+                  
+                  ></Checkbox>
+                  <Checkbox className="box"
+                   onClick={(e) => {
+                      if (e.target.checked) {
+                        console.log('checked')
+                      }
+                      else {
+                        console.log("unchecked")
+                      }
+                    }}
+                  
+                  ></Checkbox>
+                  <Checkbox className="box"
+                   onClick={(e) => {
+                      if (e.target.checked) {
+                        console.log('checked')
+                      }
+                      else {
+                        console.log("unchecked")
+                      }
+                    }}
+                  
+                  ></Checkbox>
+                  <Checkbox className="box"
+                   onClick={(e) => {
+                      if (e.target.checked) {
+                        console.log('checked')
+                      }
+                      else {
+                        console.log("unchecked")
+                      }
+                    }}
+                  
+                  ></Checkbox>
+                 
+                </div>
+              </TableCell>
               <TableCell className="tableCell">{row.developer}</TableCell>
-              <TableCell className="tableCell"></TableCell>
+              <TableCell className="tableCell">
+                
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

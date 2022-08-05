@@ -1,6 +1,16 @@
 .table {
   .tableCell{
    font-size: 10px;
+   .boxC{
+    display: flex;
+    gap:2px;
+    .box{
+      height:15px;
+      width:15px;
+      
+     }
+   }
+   
   }
   .head{
     font-weight: 600;
