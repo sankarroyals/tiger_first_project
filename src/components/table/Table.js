@@ -7,9 +7,10 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Checkbox } from "@mui/material";
+import { useState } from "react";
 
-const List = ({}) => {
-  const rows = [
+const List = () => {
+  const [rows,setRows] = useState( [
     {
       id: 1143155,
       name: "Wind Energy Forest",
@@ -65,7 +66,8 @@ const List = ({}) => {
       developer: "Smith White"
 
     },
-  ];
+    
+  ]);
   
   return (
     <TableContainer component={Paper} className="table">
