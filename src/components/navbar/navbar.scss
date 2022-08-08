@@ -1,26 +1,29 @@
 .navbar {
   
-  height: 90px;
-  border: 0.5px solid rgb(231, 228, 228);
+  height: 10px;
+ 
   display: flex;
   align-items: center;
   transform: translateY(-30px);
-  font-size: 10px;
+  
   color: #555;
 
   .wrapper {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    
+    
+ 
 
     
 
     .items {
       display: flex;
       align-items: center;
-      transform: translate(-170px,5px);
+      transform: translateY(5px);
+      margin-left: 20px;
 
 
       .item {
@@ -29,9 +32,10 @@
         margin-right: 20px;
         position: relative;
         font-size: 10px;
+        text-transform: capitalize;
         margin-left: 0;
         cursor: pointer;
-        font-weight: 100;
+        font-weight: bolder;
 
         // .icon {
         //   font-size: 20px;
@@ -43,8 +47,8 @@
         //   border-radius: 50%;
         // }
         &:hover{
-          color: blue;
-          border-bottom: 2px solid blue;
+          color: rgb(69, 145, 178);
+          border-bottom: 2px solid rgb(69, 145, 178);
         }
 
         

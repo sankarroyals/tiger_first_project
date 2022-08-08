@@ -16,15 +16,24 @@ const Widget = ({ name,percentage,depo }) => {
         </span>
         <span className="link"></span>
         <div className="percentage positive">
-        {percentage}
+        {percentage} {name === "Active Deployments" && 
+        <>
+        <i class="fa-solid fa-arrow-up" style={{marginLeft:"10px"}}></i>
+        <span className="te">than last week</span>
+        </>
+        }
         </div>
       </div>
       <div className="right">
+      {name !=='Active Deployments' && <div className="inT">8</div>}
         
+      {name === "Active Deployments" && 
+      <div className="inR">
           
-          <div className="inR">
+
           <i class="fa-solid fa-arrows-rotate"></i>
-          </div>
+          </div>}
+          
         
        
       </div>

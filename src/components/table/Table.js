@@ -6,20 +6,81 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Checkbox } from "@mui/material";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
+import { TextField } from "@mui/material";
 
 const List = () => {
+  const [pageN,setPage] = useState(5)
   const [rows,setRows] = useState( [
     {
       id: 1143155,
+      name: "Sankar",
+      parent_project_name: "Weather Forecast",
+      status: "approved",
+      pipeline_status: "approved",
+      performance_status: "approved",
+      last_run_status: "04-Apr-2022 11:03 AM",
+      developer: "Smith White",
+      control:"play"
+    },
+    {
+      id: 1143150,
+      name: "Wind Energy Forest",
+      parent_project_name: "Weather Forecast",
+      status: "canceled",
+      pipeline_status: "approved",
+      performance_status: "approved",
+      last_run_status: "04-Apr-2022 11:03 AM",
+      developer: "Smith White",
+      control:"play"
+    },
+    {
+      id: 1143157,
+      name: "Wind Energy Forest",
+      parent_project_name: "Weather Forecast",
+      status: "pending",
+      pipeline_status: "approved",
+      performance_status: "approved",
+      last_run_status: "04-Apr-2022 11:03 AM",
+      developer: "rahul",
+      control:"pause"
+    },
+    {
+      id: 1123158,
+      name: "Wind Energy Forest",
+      parent_project_name: "Weather Forecast",
+      status: "approved",
+      pipeline_status: "approved",
+      performance_status: "canceled",
+      last_run_status: "04-Apr-2022 11:03 AM",
+      developer: "Smith White",
+      control:"play"
+    },
+    {
+      id: 2143159,
       name: "Wind Energy Forest",
       parent_project_name: "Weather Forecast",
       status: "approved",
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
+      developer: "Smith White",
+      control:"play"
+    },
+    
+  
+    {
+      id: 1143058,
+      name: "Wind Energy Forest",
+      parent_project_name: "Weather Forecast",
+      status: "approved",
+      pipeline_status: "approved",
+      performance_status: "approved",
+      last_run_status: "04-Apr-2022 11:03 AM",
+      developer: "Smith White",
+    
+    control:"play"
 
     },
     {
@@ -30,196 +91,230 @@ const List = () => {
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
+      developer: "Smith White",
+      control:"pause"
     },
     {
-      id: 1143157,
+      id: 1146157,
       name: "Wind Energy Forest",
       parent_project_name: "Weather Forecast",
       status: "pending",
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
+      developer: "Smith White",
+      control:"play"
     },
     {
-      id: 1143158,
+      id: 0,
       name: "Wind Energy Forest",
       parent_project_name: "Weather Forecast",
       status: "approved",
       pipeline_status: "approved",
       performance_status: "canceled",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
+      developer: "Smith White",
+      control:"pause"
     },
     {
-      id: 1143159,
+      id: 2,
       name: "Wind Energy Forest",
       parent_project_name: "Weather Forecast",
       status: "approved",
       pipeline_status: "approved",
       performance_status: "approved",
       last_run_status: "04-Apr-2022 11:03 AM",
-      developer: "Smith White"
-
+      developer: "Smith White",
+      control:"play"
     },
     
   ]);
+  const [search,setSearch] = useState([...rows])
+  const [se,setSe] = useState('')
+  const changeSe = (e) =>{
+     setSe(e.target.value)
+    
+   
+     if(e.target.value !== ''){
+      const d = rows.filter(s=>s.name.toLowerCase().includes(e.target.value) || s.parent_project_name.toLowerCase().includes(e.target.value)
+     || s.developer.toLowerCase().includes(e.target.value)
+      
+      )
+      setSearch(d)
+      
+     }
+     else{
+      setSe('')
+      setSearch([...rows])
+     }
+    
+  }
+
+  
   
   return (
-    <TableContainer component={Paper} className="table">
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell className="tableCell head">Model Name</TableCell>
-            <TableCell className="tableCell head">Parent Project</TableCell>
-            <TableCell className="tableCell head">Status</TableCell>
-            <TableCell className="tableCell head">Pipeline Health</TableCell>
-            <TableCell className="tableCell head">Performance Drift</TableCell>
-            <TableCell className="tableCell head">Left Run Status</TableCell>
-            <TableCell className="tableCell head">Left Run Status</TableCell>
-            <TableCell className="tableCell head">Devloper</TableCell>
-            <TableCell className="tableCell head">Control Panel</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell className="tableCell">{row.name}</TableCell>
+    
+   <> 
+   <input className="in" placeholder="Search by columns..." autoComplete="off" type="text" name="search" value={se} onChange={changeSe} />
+   
+   <TableContainer component={Paper} className="table">
+   <Table sx={{ minWidth: 650 }} aria-label="simple table">
+     <TableHead>
+       <TableRow className="t">
+         <TableCell className="tableCell head">Model Name</TableCell>
+         <TableCell className="tableCell head">Parent Project</TableCell>
+         <TableCell className="tableCell head">Status</TableCell>
+         <TableCell className="tableCell head">Pipeline Health</TableCell>
+         <TableCell className="tableCell head">Performance Drift</TableCell>
+         <TableCell className="tableCell head">Left Run Status</TableCell>
+         <TableCell className="tableCell head">Left Run Status</TableCell>
+         <TableCell className="tableCell head">Devloper</TableCell>
+         <TableCell className="tableCell head">Control Panel</TableCell>
+       </TableRow>
+     </TableHead>
+     <TableBody>
+       {search.map((row,index) => (
+       
+         <TableRow key={row.id}>
+         
+           <TableCell className="tableCell bo">{row.name}</TableCell>
 
-              <TableCell className="tableCell">{row.parent_project_name}</TableCell>
+           <TableCell className="tableCell bo">{row.parent_project_name}</TableCell>
 
-              <TableCell className="tableCell">
-                {row.status === 'approved' ?
-                  <span className={`status ${row.status}`}>
-                    <i class="fas fa-check"></i>
-                  </span>
-                  :
+           <TableCell className="tableCell">
+             {row.status === 'approved' ?
+               <span className={`status ${row.status}`}>
+                 <i class="fas fa-check"></i>
+               </span>
+               :
 
-                  (row.status === 'pending' ?
-
-
-                    <span className={`status ${row.status}`}><i class="fas fa-exclamation"></i></span>
-
-                    :
-                    <span className={`status ${row.status}`}><i class="fa-solid fa-xmark"></i></span>
-
-                  )
-
-                }
-              </TableCell>
-              <TableCell className="tableCell">
-                {row.pipeline_status === 'approved' ?
-                  <span className={`status ${row.pipeline_status}`}>
-                    <i class="fas fa-check"></i>
-                  </span>
-                  :
-
-                  (row.status === 'pending' ?
+               (row.status === 'pending' ?
 
 
-                    <span className={`status ${row.pipeline_status}`}><i class="fas fa-exclamation"></i></span>
+                 <span className={`status ${row.status}`}><i class="fas fa-exclamation"></i></span>
 
-                    :
-                    <span className={`status ${row.pipeline_status}`}><i class="fa-solid fa-xmark"></i></span>
+                 :
+                 <span className={`status ${row.status}`}><i class="fa-solid fa-xmark"></i></span>
 
-                  )
+               )
 
-                }
-              </TableCell>
-              <TableCell className="tableCell">
-                {row.performance_status === 'approved' ?
-                  <span className={`status ${row.performance_status}`}>
-                    <i class="fas fa-check"></i>
-                  </span>
-                  :
+             }
+           </TableCell>
+           <TableCell className="tableCell">
+             {row.pipeline_status === 'approved' ?
+               <span className={`status ${row.pipeline_status}`}>
+                 <i class="fas fa-check"></i>
+               </span>
+               :
 
-                  (row.status === 'pending' ?
+               (row.status === 'pending' ?
 
 
-                    <span className={`status ${row.performance_status}`}><i class="fas fa-exclamation"></i></span>
+                 <span className={`status ${row.pipeline_status}`}><i class="fas fa-exclamation"></i></span>
 
-                    :
-                    <span className={`status ${row.performance_status}`}><i class="fa-solid fa-xmark"></i></span>
+                 :
+                 <span className={`status ${row.pipeline_status}`}><i class="fa-solid fa-xmark"></i></span>
 
-                  )
+               )
 
-                }
-              </TableCell>
-              <TableCell className="tableCell">{row.last_run_status}</TableCell>
+             }
+           </TableCell>
+           <TableCell className="tableCell">
+             {row.performance_status === 'approved' ?
+               <span className={`status ${row.performance_status}`}>
+                 <i class="fas fa-check"></i>
+               </span>
+               :
 
-              <TableCell className="tableCell">
-                <div className="boxC">
+               (row.status === 'pending' ?
 
-                  <Checkbox className="box" defaultChecked
-                    onClick={(e) => {
-                      if (e.target.checked) {
-                        console.log('checked')
-                      }
-                      else {
-                        console.log("unchecked")
-                      }
-                    }}
-                  ></Checkbox>
-                  <Checkbox className="box"
-                   onClick={(e) => {
-                      if (e.target.checked) {
-                        console.log('checked')
-                      }
-                      else {
-                        console.log("unchecked")
-                      }
-                    }}
-                  
-                  ></Checkbox>
-                  <Checkbox className="box"
-                   onClick={(e) => {
-                      if (e.target.checked) {
-                        console.log('checked')
-                      }
-                      else {
-                        console.log("unchecked")
-                      }
-                    }}
-                  
-                  ></Checkbox>
-                  <Checkbox className="box"
-                   onClick={(e) => {
-                      if (e.target.checked) {
-                        console.log('checked')
-                      }
-                      else {
-                        console.log("unchecked")
-                      }
-                    }}
-                  
-                  ></Checkbox>
-                  <Checkbox className="box"
-                   onClick={(e) => {
-                      if (e.target.checked) {
-                        console.log('checked')
-                      }
-                      else {
-                        console.log("unchecked")
-                      }
-                    }}
-                  
-                  ></Checkbox>
-                 
-                </div>
-              </TableCell>
-              <TableCell className="tableCell">{row.developer}</TableCell>
-              <TableCell className="tableCell">
-                
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+
+                 <span className={`status ${row.performance_status}`}><i class="fas fa-exclamation"></i></span>
+
+                 :
+                 <span className={`status ${row.performance_status}`}><i class="fa-solid fa-xmark"></i></span>
+
+               )
+
+             }
+           </TableCell>
+           <TableCell className="tableCell bo">{row.last_run_status}</TableCell>
+
+           <TableCell className="tableCell">
+             <div className="boxC">
+
+               <div className="box" 
+                 onClick={(e) => {
+                   if (e.target.checked) {
+                     console.log('checked')
+                   }
+                   else {
+                     console.log("unchecked")
+                   }
+                 }}
+               ></div>
+               <div className="box"
+                onClick={(e) => {
+                   if (e.target.checked) {
+                     console.log('checked')
+                   }
+                   else {
+                     console.log("unchecked")
+                   }
+                 }}
+               
+               ></div>
+               <div className="box"
+                onClick={(e) => {
+                   if (e.target.checked) {
+                     console.log('checked')
+                   }
+                   else {
+                     console.log("unchecked")
+                   }
+                 }}
+               
+               ></div>
+               <div className="box"
+                onClick={(e) => {
+                   if (e.target.checked) {
+                     console.log('checked')
+                   }
+                   else {
+                     console.log("unchecked")
+                   }
+                 }}
+               
+               ></div>
+               <div className="box"
+                onClick={(e) => {
+                   if (e.target.checked) {
+                     console.log('checked')
+                   }
+                   else {
+                     console.log("unchecked")
+                   }
+                 }}
+               
+               ></div>
+              
+             </div>
+           </TableCell>
+           <TableCell className="tableCell">{row.developer}</TableCell>
+           <TableCell className="tableCell plays">
+           <i class="fa-solid fa-stop stop"></i>
+           {row.control === 'play' && <i class="fa-solid fa-play play"></i>}
+           {row.control === 'pause' && <i class="fa-solid fa-pause pause"></i>}
+           
+           </TableCell>
+         </TableRow>
+       ))}
+     </TableBody>
+   </Table>
+   
+ </TableContainer>
+ <p style={{padding:"6px 0px 10px",textAlign:"center"}}>Loading More.....</p>
+ </>
   );
 };
 
