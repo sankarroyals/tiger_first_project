@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactECharts from 'echarts-for-react';
-const Bar = ({data,labels}) => {
+
+const Pie = ({data,labels}) => {
     const options = {
         grid: { top: 8, right: 8, bottom: 24, left: 36 },
         xAxis: {
@@ -13,16 +14,19 @@ const Bar = ({data,labels}) => {
         series: [
           {
             data: data,
-            type: 'bar',
+            type: 'pie',
             smooth: true,
+            
           },
         ],
         tooltip: {
-          trigger: 'axis',
+          trigger: 'item',
         },
       };
     
       return <ReactECharts option={options} />;
+  
+  
 }
 
-export default Bar
+export default Pie

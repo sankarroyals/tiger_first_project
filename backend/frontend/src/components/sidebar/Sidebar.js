@@ -59,7 +59,7 @@ const Sidebar = () => {
                 navigate('/charts')
               }}
             >
-              <i class="fa-solid fa-chart-area" style={{ fontSize: "16px" }}></i>
+              <i class="fas fa-cube"></i>
               <span className="side">Projects</span>
             </li>
 

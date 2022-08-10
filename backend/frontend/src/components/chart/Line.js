@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactECharts from 'echarts-for-react';
 
-const Line = ({data,labels}) => {
+const Line = ({data,labels,values}) => {
   const options = {
     grid: { top: 8, right: 8, bottom: 24, left: 36 },
     xAxis: {
@@ -10,12 +10,16 @@ const Line = ({data,labels}) => {
     },
     yAxis: {
       type: 'value',
+      
+      
     },
     series: [
       {
         data: data,
         type: 'line',
-        smooth: true,
+        smooth: false,
+        
+
       },
     ],
     tooltip: {
