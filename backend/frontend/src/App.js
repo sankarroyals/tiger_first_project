@@ -8,6 +8,8 @@ import Navbar from './components/navbar/Navbar';
 import Chart from './components/chart/Chart';
 import Publish from './components/publish/Publish';
 import AddReport from './components/addReport/AddReport';
+
+//added comment
 function App() {
   return (
     <BrowserRouter>
