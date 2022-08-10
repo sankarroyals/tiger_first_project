@@ -8,8 +8,7 @@ import Pie from "./Pie";
 import { useNavigate } from "react-router";
 import pptxgen from "pptxgenjs";
 import {DndProvider} from  "react-dnd"
-import  {HTML5Backend}  from "react-dnd-html5-backend";
-import { useDrag } from "react-dnd";
+
 
 
 
