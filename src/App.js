@@ -11,7 +11,7 @@ import AddReport from './components/addReport/AddReport';
 function App() {
   return (
     <BrowserRouter>
-      <div className="home">
+      <div className="home ">
         <Sidebar />
         <div className="homeContainer">
           <Navbar />
