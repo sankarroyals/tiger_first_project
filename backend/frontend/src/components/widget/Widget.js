@@ -18,7 +18,7 @@ const Widget = ({ name,percentage,depo }) => {
         <div className="percentage positive">
         {percentage} {name === "Active Deployments" && 
         <>
-        <i class="fa-solid fa-arrow-up" style={{marginLeft:"10px"}}></i>
+        <i className="fa-solid fa-arrow-up" style={{marginLeft:"10px"}}></i>
         <span className="te">than last week</span>
         </>
         }
@@ -31,7 +31,7 @@ const Widget = ({ name,percentage,depo }) => {
       <div className="inR">
           
 
-          <i class="fa-solid fa-arrows-rotate"></i>
+          <i className="fa-solid fa-arrows-rotate"></i>
           </div>}
           
         

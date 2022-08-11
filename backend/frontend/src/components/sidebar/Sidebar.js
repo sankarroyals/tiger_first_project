@@ -15,18 +15,22 @@ const Sidebar = () => {
   const handle =  (e)=>{
     
     if(cross === 'bar'){
+      
+      document.querySelector('.sidebar').style.width="170px"
       setCross('cross')
-
     }
     else{
       setCross('bar')
+      document.querySelector('.sidebar').style.width="50px"
     }
 
-   const sides = document.querySelectorAll('.side')
-   for(let i=0;i<sides.length;i++){
-    sides[i].classList.toggle('dis')
-   }
-   document.querySelector('.bottom').classList.toggle('row')
+  //  const sides = document.querySelectorAll('.side')
+  //  for(let i=0;i<sides.length;i++){
+    
+  //   sides[i].classList.toggle('dis')
+  
+  //  }
+   
   }
 
 
@@ -37,36 +41,51 @@ const Sidebar = () => {
 
         <div className="top" >
 
-          {cross==='bar' ? <i class="fa-solid fa-bars" style={{ fontSize: "16px", cursor: "pointer" }} 
-          onClick={handle}
-          ></i>
+          {cross==='bar' ? <div className="bar"><i class="fa-solid fa-bars" style={{ fontSize: "16px" }}></i></div> 
+          
+          
           :
           <div className="cross">
-          <i class="fa-solid fa-xmark" style={{ fontSize: "16px", cursor: "pointer" }} 
-          onClick={handle}></i>
+          <i class="fa-solid fa-xmark" style={{ fontSize: "16px" }} 
+          ></i>
           </div>
           
           }
 
         </div>
+        <input type='checkbox' className='checkbox' style={{position:"absolute",top:"12px",left:"18px",opacity:"0",cursor:"pointer",
+         
+          }}
+            onClick={(e)=>{
+              if(e.target.checked){
+                handle(e)
+              }
+              else{
+                handle(e)
+              }
+            }}
+
+
+          />
 
         <div className="">
+         
           <ul>
-
+          
 
             <li
               onClick={() => {
                 navigate('/charts')
               }}
             >
-              <i class="fas fa-cube"></i>
+              <i className="fas fa-cube"></i>
               <span className="side">Projects</span>
             </li>
 
 
 
             <li>
-              <i class="fa-solid fa-database" ></i>
+              <i className="fa-solid fa-database" ></i>
               <span className="side">Model Store</span>
             </li>
 
@@ -77,25 +96,25 @@ const Sidebar = () => {
             </li>
 
             <li>
-              <i class="fa-solid fa-file-arrow-down"></i>
+              <i className="fa-solid fa-file-arrow-down"></i>
               <span className="side">Deployments</span>
               
             </li>
             <li>
-              <i class="fa-solid fa-user"></i>
+              <i className="fa-solid fa-user"></i>
               <span className="side">Admin</span>
             </li>
 
 
           </ul>
         </div>
-        <div className="bottom ">
+        <div className="bottom">
           <div className="item noti">
             <NotificationsNoneOutlinedIcon className="icon" />
             <div className="counter">1</div>
           </div>
           <div className="item help" style={{ fontSize: "20px" }}>
-            <i class="fa-solid fa-circle-question"></i>
+            <i className="fa-solid fa-circle-question"></i>
           </div>
           <div className="item profile">
             <img
