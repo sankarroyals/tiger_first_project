@@ -32,12 +32,14 @@
       width: 8px !important;
       height: 30px !important;
       position: relative;
+      transition: all ease 0.9s !important;
 
     }
 
     .help {
       width: 10px !important;
       height: 10px !important;
+      transition: all ease 0.9s !important;
     }
 
     .item {
@@ -84,12 +86,14 @@
         position: absolute;
         top: 1px !important;
         right: -20px !important;
+        transition: all ease 0.1s !important;
       }
 
       .avatar {
         width: 20px !important;
         height: 20px !important;
         border-radius: 50%;
+        transition: all ease 0.9s !important;
 
       }
 
