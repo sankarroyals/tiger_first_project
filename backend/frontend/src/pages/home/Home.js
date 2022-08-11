@@ -3,7 +3,7 @@ import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import Table from "../../components/table/Table";
 import Widget from "../../components/widget/Widget";
-
+// added home
 const Home = () => {
 
 
