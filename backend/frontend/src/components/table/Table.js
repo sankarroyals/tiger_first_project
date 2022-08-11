@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import { TextField } from "@mui/material";
 
 const List = () => {
-  const [pageN, setPage] = useState(2)
+  const [pageN, setPage] = useState(3)
   const [load, setLoad] = useState(false)
   const [rows, setRows] = useState([
     {
@@ -144,6 +144,7 @@ const List = () => {
       setSearch(d)
 
     }
+    //use time ==> jssearch, use => react table, material ui, loadsh
     else {
       setSe('')
       setSearch([...rows])
@@ -160,7 +161,7 @@ const List = () => {
   const datas = async () => {
     const s = document.documentElement.scrollHeight - window.innerHeight
     const sc = window.scrollY
-
+    
 
     if (Math.ceil(sc) === s) {
      
@@ -181,12 +182,15 @@ const List = () => {
       window.addEventListener('scroll', datas)
 
     }, 1000)
+
+
+
   }
 
 
 
 
-
+//reduce row height
   return (
 
     <>
@@ -197,9 +201,9 @@ const List = () => {
           padding: "10px", border: "none", borderBottom: "2px solid rgb(114, 111, 111)", outline: "none"
         }}>
           <option>Paginate</option>
-          <option value="3">3</option>
+          <option value="4">4</option>
           <option value="5">5</option>
-          <option value="10">10</option>
+          <option value="8">8</option>
         </select>
       </div>
 
