@@ -5,8 +5,8 @@ const Line = ({data,labels,values}) => {
   const options = {
     grid: { top: 8, right: 8, bottom: 24, left: 36 },
     xAxis: {
-      type: 'category',
-      data: labels,
+      type: 'value',
+      // data: labels,
     },
     yAxis: {
       type: 'value',
