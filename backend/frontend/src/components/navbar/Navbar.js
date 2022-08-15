@@ -45,7 +45,7 @@ const Navbar = () => {
             <p>Data Prep Inference</p>
           </div>
           <div className="item">
-            <p>Model Monitor</p>
+            <p>Models Monitor</p>
           </div>
         </div>
       </div>
